@@ -1,20 +1,21 @@
 
 /** Variables **/
 
-@rs: 16px; /** This is the Root Font Size **/
+@rs: 18px; /** This is the Root Font Size **/
 
 
 /** Colors **/
 
 @color-black: #111;
+@color-black-medium: #333;
 @color-black-light: #666;
 @color-black-lighter: #999;
 @color-white: #fff;
 @color-white-light: #f5f5f5;
 @color-white-dark: #ccc;
-@color-main: #F8CA00;
-@color-main-light: #f5e395;
-@color-main-dark: #E97F02;
+@color-main: #57ad68;
+@color-main-light: lighten(@color-main, 20%);
+@color-main-dark: darken(@color-main, 10%);
 @color-secondary: #BD1550;
 @color-secondary-light: #e5a3ba;
 @color-secondary-lighter: #f2d2dd;
@@ -120,6 +121,60 @@
 }
 .icons-facebook:before {
 		content: "\e004";
+}
+
+// Btns
+.btn {
+	display: inline-block;
+	position: relative;
+	height: 40px;
+	padding: 0 20px;
+	border: 0;
+	color: #666665;
+	background-color: #dededc;
+	font-size: 14px;
+	line-height: 39px;
+	text-align: center;
+	text-decoration: none;
+	font-style: normal;
+	cursor: pointer;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	vertical-align: bottom;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-weight: 400;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-transition: all .1s ease;
+	-moz-transition: all .1s ease;
+	-ms-transition: all .1s ease;
+	-o-transition: all .1s ease;
+	transition: all .1s ease;
+
+	&:hover {
+		background-image: -webkit-gradient(linear,0 0,0 100%,from(rgba(0,0,0,0.05)),to(rgba(0,0,0,0.05)));
+		background-image: -moz-linear-gradient(top,rgba(0,0,0,0.05),rgba(0,0,0,0.05));
+		background-image: -webkit-linear-gradient(top,rgba(0,0,0,0.05),rgba(0,0,0,0.05));
+		background-image: -o-linear-gradient(top,rgba(0,0,0,0.05),rgba(0,0,0,0.05));
+		background-image: linear-gradient(to bottom,rgba(0,0,0,0.05),rgba(0,0,0,0.05));
+		background-repeat: repeat-x;
+		border-bottom: 1px solid rgba(0,0,0,0.2);
+	}
+}
+
+.btn-primary {
+	background-color: @color-main;
+	color: @color-white !important;
 }
 
 /* Hides shit */

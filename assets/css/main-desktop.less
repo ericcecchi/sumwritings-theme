@@ -55,26 +55,30 @@ body {
 			font-size: @rs*2;
 			margin: 0;
 			padding: 0;
-			line-height: @rs*3;
+			line-height: @rs*2;
 			color: @color-white;
 		}
 		.sidebar__information__description {
 			font-size: @rs;
 			margin: 0;
-			padding: @rs/2 0;
+			padding: 0 0 @rs/2;
 			line-height: @rs*1.5;
-			color: @color-white-dark;
+			color: @color-white;
 			font-weight: normal;
 		}
+		.sidebar__information__header,
 		.sidebar__information__footer {
 			padding: @rs/2 0;
 			a {
 				text-decoration: none;
-				color: @color-main;
+				color: @color-main-light;
 				&:hover {
-					color: @color-main-light;
+					color: @color-main;
 				}
 			}
+		}
+		.sidebar__information__header {
+			padding: @rs/2 0 0;
 		}
 	}
 }
@@ -136,7 +140,7 @@ body {
 				text-decoration: none;
 				color: @color-black;
 				&:hover {
-					color: @color-main-dark;
+					color: @color-black-medium;
 				}
 			}
 		}
@@ -415,8 +419,8 @@ body {
 		font-family: @font-sans;
 	}
 	.contentpost__headline {
-		font-size: @rs*4;
-		line-height: @rs*4;
+		font-size: @rs*3;
+		line-height: @rs*3.5;
 		padding: @rs 0 @rs*2;
 		margin: 0;
 		font-family: @font-sans;
@@ -424,8 +428,8 @@ body {
 		font-weight: 800;
 	}
 	.contentpost__articlecontent {
-		font-size: @rs/8*11;
-		line-height: @rs/8*15;
+		font-size: @rs/9*11;
+		line-height: @rs/6*11;
 		a {
 			color: @color-black;
 			text-decoration: underline;
@@ -433,19 +437,19 @@ body {
 			&:hover {
 				color: @color-main-dark;
 			}
-		}
+		}ƒ
 		::-moz-selection {
 				color: #111;
 				background: @color-secondary-light;
 				text-shadow: none;
 		}
-		
+
 		::selection {
 				color: #111;
 				background: @color-secondary-lighter;
 				text-shadow: none;
 		}
-		
+
 		h1, h2, h3,
 		h4, h5, h6 {
 				text-rendering: optimizeLegibility;
@@ -454,48 +458,48 @@ body {
 				font-family: @font-sans;
 				font-weight: 800;
 		}
-		
+
 		h1 {
 				font-size: @rs*3;
 				line-height: @rs*3;
 				letter-spacing: -2px;
 				text-indent: -3px;
-				margin: @rs/8*15 0;
+				margin: @rs/6*11 0;
 		}
-		
+
 		h2 {
 				font-size: @rs*2;
 				line-height: @rs*2;
 				letter-spacing: -1px;
 				text-indent: -2px;
-				margin: @rs/8*15 0;
+				margin: @rs/6*11 0;
 		}
-		
+
 		h3 {
-				font-size: @rs/8*11;
-				line-height: @rs/8*15;
+				font-size: @rs/9*11;
+				line-height: @rs/6*11;
 		}
-		
+
 		h4 {
-				font-size: @rs/8*11;
-				line-height: @rs/8*15;
+				font-size: @rs/9*11;
+				line-height: @rs/6*11;
 		}
-		
+
 		h5 {
-				font-size: @rs/8*11;
-				line-height: @rs/8*15;
+				font-size: @rs/9*11;
+				line-height: @rs/6*11;
 		}
-		
+
 		h6 {
-				font-size: @rs/8*11;
-				line-height: @rs/8*15;
+				font-size: @rs/9*11;
+				line-height: @rs/6*11;
 		}
-		
+
 		img {
 			max-width: 100%;
 		}
 		p {
-			padding: 0 0 @rs/8*15;
+			padding: 0 0 @rs*1.5;
 			margin: 0;
 		}
 		code {
@@ -524,6 +528,9 @@ body {
 				white-space: pre-wrap;
 				border: none;
 		}
+		ol {
+			margin-top: 0;
+		}
 		hr {
 				border: 0;
 				padding: 0;
@@ -532,7 +539,7 @@ body {
 				margin: @rs auto @rs*3 auto;
 				border: 1px solid @color-white-dark;
 		}
-		
+
 		blockquote {
 				-moz-box-sizing: border-box;
 				box-sizing: border-box;
@@ -543,15 +550,17 @@ body {
 				line-height: @rs*3;
 				font-style: italic;
 		}
-		
+
 		blockquote p {
-				margin: 0.8em 0;
+				margin: 0.5em 0;
+				padding: 0;
 				font-style: italic;
 		}
-		
+
 		blockquote small {
 				display: inline-block;
-				margin: 0.8em 0 0.8em 1.5em;;
+				margin: 0.5em 0 0.5em 1.5em;
+				padding: 0;
 				font-size:0.9em;
 				color: #ccc;
 		}
@@ -570,7 +579,7 @@ body {
 						0 1px 0 rgba(0, 0, 0, 0.2),
 						0 1px 0 0 #fff inset;
 		}
-		
+
 		table {
 				-moz-box-sizing: border-box;
 				box-sizing: border-box;
@@ -579,7 +588,7 @@ body {
 				max-width: 100%;
 				background-color: transparent;
 		}
-		
+
 		table th,
 		table td {
 				padding: 8px;
@@ -588,9 +597,9 @@ body {
 				vertical-align: top;
 				border-top: 1px solid @color-white-dark;
 		}
-		
+
 		table th { color: #000; }
-		
+
 		table caption + thead tr:first-child th,
 		table caption + thead tr:first-child td,
 		table colgroup + thead tr:first-child th,
@@ -599,16 +608,16 @@ body {
 		table thead:first-child tr:first-child td {
 				border-top: 0;
 		}
-		
+
 		table tbody + tbody { border-top: 2px solid #efefef; }
-		
+
 		table table table { background-color: #fff; }
-		
+
 		table tbody > tr:nth-child(odd) > td,
 		table tbody > tr:nth-child(odd) > th {
 				background-color: @color-white-dark;
 		}
-		
+
 		table.plain {
 				tbody > tr:nth-child(odd) > td,
 				tbody > tr:nth-child(odd) > th {
