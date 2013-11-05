@@ -175,6 +175,13 @@ body {
 		line-height: @rs*1.5;
 		color: @color-black-lighter;
 		font-family: @font-sans;
+
+		a {
+			color: @color-black-lighter;
+			&:hover {
+				color: @color-main;
+			}
+		}
 	}
 }
 
@@ -316,7 +323,7 @@ body {
 /** Post **/
 
 .contentpost {
-	padding: @rs*7.5 0 0;
+	padding: @rs*7.5 0 @rs;
 	.contentpost__logo {
 		position: absolute;
 		top: 10px;
@@ -612,8 +619,10 @@ body {
 		}
 	}
 	.contentpost__footer {
+		font-family: @font-sans;
+		font-weight: 700;
 		text-align: right;
-		margin: @rs*4 0;
+		margin: 0 0 20px;
 		a {
 			color: @color-white-dark;
 			font-size: @rs*1.4;

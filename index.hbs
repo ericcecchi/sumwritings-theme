@@ -53,8 +53,9 @@
                 <p>{{excerpt characters="20"}}&hellip;</p>
             </section>
             <span class="contentlist__article__meta post-meta">
-                <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
-                {{#if tags}} · in {{tags}}{{/if}}
+                <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> ·
+                {{#if tags}} in {{tags}} · {{/if}}
+                <a href="{{url}}#disqus_thread">comments</a>
             </span>
         </article>
 
