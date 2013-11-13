@@ -39,7 +39,8 @@
             </section>
         </div>
 
-        <span class="contentpost__meta"> {{#if tags}}In {{tags separator=" | "}}{{/if}}</span>
+        <span class="contentpost__meta"> {{#if tags}}In {{tags separator=" | "}} • {{/if}}</span>
+        <span id="wordcount" class="contentpost__meta"></span>
 
         <h1 class="contentpost__headline post-title">{{{title}}}</h1>
 
