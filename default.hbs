@@ -9,37 +9,40 @@
     <title>{{meta_title}}</title>
     <meta name="description" content="{{meta_description}}" />
 
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="MobileOptimized" content="320" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    {{! Styles'n'Scripts }}
-    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" media="only screen and (max-width: 1000px)" href="/assets/css/main-mobile.css" />
-    <link rel="stylesheet" type="text/css" media="only screen and (min-width: 1001px)" href="/assets/css/main-desktop.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/sumwritings.css" />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{meta_title}}">
+    <meta name="twitter:description" content="{{meta_description}}">
+    <meta name="twitter:site" content="http://www.svenread.com">
+    <meta name="twitter:creator" content="@starburst1977">
 
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=PT+Serif&subset=latin,latin-ext,cyrillic,cyrillic-ext' rel='stylesheet' type='text/css'>
-
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?subset=latin,cyrillic-ext,latin-ext,cyrillic&family=Droid+Serif:400,700,400italic|Open+Sans:700,400" />
-
-    {{! Ghost outputs important style and meta data with this tag }}
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{meta_title}}">
+    <meta property="og:description" content="{{meta_description}}">
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/vendor/jQuery.mmenu/src/css/jquery.mmenu.css" />
+    <link rel="stylesheet" type="text/css" href="/vendor/highlightjs/styles/default.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/Font-Awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/fluidbox/css/fluidbox.css">
     {{ghost_head}}
 </head>
 <body class="{{body_class}}">
-
-    {{! Everything else gets inserted here }}
-    {{{body}}}
-
-    {{! Ghost outputs important scripts and data with this tag }}
-    {{ghost_foot}}
-
-    {{! The main JavaScript file }}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" async="" src="/assets/js/helpers.js"></script>
-    <script type="text/javascript" async="" src="/assets/js/main.js"></script>
+    <div>
+        <a class="toggle" href="#side-menu"><i class="fa fa-bars"></i></a>
+        <nav class="side-menu" id="side-menu" style="display: none">
+            <ul>
+                <li><a href="/">Back to Home</a></li>
+                <li><a href="/me/">About Me</a></li>
+            </ul>
+        </nav>
+        {{{body}}}
+        {{ghost_foot}}
+    </div>
     <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'sumwritings'; // required: replace example with your forum shortname
@@ -66,6 +69,6 @@
       })();
 
     </script>
-
+    <script data-main="/assets/js/readium" src="/vendor/requirejs/require.js"></script>
 </body>
 </html>
